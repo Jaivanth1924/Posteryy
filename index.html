@@ -7,39 +7,172 @@
 <title>Posteryy — Posters for your space</title>
 <style>
 :root{--bg:#111014;--panel:#1d1a22;--text:#faf8fc;--muted:#aaa3b2;--lime:#baf477;--line:#36313d}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
-.wrap{width:min(1100px,92%);margin:auto}header{border-bottom:1px solid var(--line);position:sticky;top:0;background:#111014ed;backdrop-filter:blur(12px);z-index:2}
-nav{height:70px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:26px;font-weight:950;letter-spacing:-1.5px}.logo span{color:var(--lime)}nav a,.links a{color:var(--text);text-decoration:none;margin-left:18px;font-size:14px}
-.hero{padding:76px 0 60px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.eyebrow{color:var(--lime);font-size:12px;font-weight:800;letter-spacing:2px}.hero h1{font-size:clamp(48px,7vw,78px);line-height:.98;letter-spacing:-4px;margin:17px 0}.hero h1 span{color:var(--lime)}p{color:var(--muted);line-height:1.7}.cta{display:inline-block;background:var(--lime);color:#151710;padding:13px 20px;border-radius:30px;text-decoration:none;font-weight:850;margin-top:12px}
-.art{min-height:340px;display:grid;place-items:center;position:relative}.poster{width:205px;height:280px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 22px 55px #0008;background:linear-gradient(145deg,#ffc56d,#ed6570 55%,#482552);transform:rotate(-8deg)}.poster strong{font-size:42px;line-height:.9;letter-spacing:-3px}.poster small{font-weight:800;letter-spacing:2px}.poster.back{position:absolute;transform:rotate(9deg) translate(100px,0);background:linear-gradient(145deg,#a8e6d3,#287d88 60%,#1b2c4b);width:180px;height:250px}
-section{padding:48px 0}.heading h2{font-size:34px;letter-spacing:-1px;margin:8px 0}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}.filters button{border:1px solid #514b58;background:none;color:white;padding:9px 15px;border-radius:25px;cursor:pointer}.filters button.active,.filters button:hover{background:var(--lime);color:#111;border-color:var(--lime)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}.cover{height:260px;display:grid;place-items:center;text-align:center;padding:20px;font-size:39px;font-weight:950;line-height:.95;letter-spacing:-2px}.one{background:linear-gradient(145deg,#f9c36d,#ed6b62 55%,#542958)}.two{background:linear-gradient(145deg,#102a40,#24828a 60%,#d5bb86)}.three{background:linear-gradient(145deg,#f5d1aa,#c35d78 55%,#392747)}.four{background:linear-gradient(145deg,#d7e9a4,#5b896c 60%,#203c43)}.five{background:linear-gradient(145deg,#f5d28a,#c45c36 55%,#482b49)}.six{background:linear-gradient(145deg,#aaa5ed,#565092 60%,#20213c)}
-.info{padding:15px}.info h3{margin:0 0 5px}.info p{font-size:13px;margin:0}.price{color:var(--lime);font-size:13px;font-weight:800;margin:12px 0}.info a{display:block;text-align:center;padding:10px;border:1px solid #514b58;border-radius:24px;color:white;text-decoration:none;font-size:13px}
-.about{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:25px}.about h2{font-size:32px;line-height:1.1;margin:10px 0}
-footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13px}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-@media(max-width:700px){.hero{grid-template-columns:1fr;padding-top:50px}.art{min-height:300px}.grid{grid-template-columns:repeat(2,1fr);gap:11px}.cover{height:190px;font-size:30px}.about{grid-template-columns:1fr}nav .links{display:none}}
-@media(max-width:420px){.cover{height:165px;font-size:25px}.info{padding:11px}.info h3{font-size:14px}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{width:min(1100px,92%);margin:auto}
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:#111014ed;backdrop-filter:blur(12px);z-index:2}
+nav{height:70px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:26px;font-weight:950;letter-spacing:-1.5px}
+.logo span{color:var(--lime)}
+nav a,.links a{color:var(--text);text-decoration:none;margin-left:18px;font-size:14px}
+.hero{padding:76px 0 60px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.eyebrow{color:var(--lime);font-size:12px;font-weight:800;letter-spacing:2px}
+.hero h1{font-size:clamp(48px,7vw,78px);line-height:.98;letter-spacing:-4px;margin:17px 0}
+.hero h1 span{color:var(--lime)}
+p{color:var(--muted);line-height:1.7}
+.cta{display:inline-block;background:var(--lime);color:#151710;padding:13px 20px;border-radius:30px;text-decoration:none;font-weight:850;margin-top:12px}
+.art{min-height:340px;display:grid;place-items:center;position:relative}
+.poster{width:205px;height:280px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 22px 55px #0008;background:linear-gradient(145deg,#ffc56d,#ed6570 55%,#482552);transform:rotate(-8deg)}
+.poster strong{font-size:42px;line-height:.9;letter-spacing:-3px}
+.poster small{font-weight:800;letter-spacing:2px}
+.poster.back{position:absolute;transform:rotate(9deg) translate(100px,0);background:linear-gradient(145deg,#a8e6d3,#287d88 60%,#1b2c4b);width:180px;height:250px}
+section{padding:48px 0}
+.heading h2{font-size:34px;letter-spacing:-1px;margin:8px 0}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}
+.filters button{border:1px solid #514b58;background:none;color:white;padding:9px 15px;border-radius:25px;cursor:pointer}
+.filters button.active,.filters button:hover{background:var(--lime);color:#111;border-color:var(--lime)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.cover{height:260px;display:grid;place-items:center;text-align:center;padding:20px;font-size:39px;font-weight:950;line-height:.95;letter-spacing:-2px}
+.one{background:linear-gradient(145deg,#f9c36d,#ed6b62 55%,#542958)}
+.two{background:linear-gradient(145deg,#102a40,#24828a 60%,#d5bb86)}
+.three{background:linear-gradient(145deg,#f5d1aa,#c35d78 55%,#392747)}
+.four{background:linear-gradient(145deg,#d7e9a4,#5b896c 60%,#203c43)}
+.five{background:linear-gradient(145deg,#f5d28a,#c45c36 55%,#482b49)}
+.six{background:linear-gradient(145deg,#aaa5ed,#565092 60%,#20213c)}
+.info{padding:15px}
+.info h3{margin:0 0 5px}
+.info p{font-size:13px;margin:0}
+.price{color:var(--lime);font-size:13px;font-weight:800;margin:12px 0}
+.info a{display:block;text-align:center;padding:10px;border:1px solid #514b58;border-radius:24px;color:white;text-decoration:none;font-size:13px}
+.about{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.about h2{font-size:32px;line-height:1.1;margin:10px 0}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13px}
+.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:700px){
+.hero{grid-template-columns:1fr;padding-top:50px}
+.art{min-height:300px}
+.grid{grid-template-columns:repeat(2,1fr);gap:11px}
+.cover{height:190px;font-size:30px}
+.about{grid-template-columns:1fr}
+nav .links{display:none}
+}
+@media(max-width:420px){
+.cover{height:165px;font-size:25px}
+.info{padding:11px}
+.info h3{font-size:14px}
+}
 </style>
 </head>
 <body>
-<header><nav class="wrap"><a class="logo" href="#" style="text-decoration:none;color:white">poster<span>yy.</span></a><div class="links"><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a></div><a class="cta" style="margin:0" href="#shop">Explore ↗</a></nav></header>
+<header>
+<nav class="wrap">
+<a class="logo" href="#" style="text-decoration:none;color:white">poster<span>yy.</span></a>
+<div class="links">
+<a href="#shop">Shop</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+<a class="cta" style="margin:0" href="#shop">Explore ↗</a>
+</nav>
+</header>
 <main>
-<div class="wrap hero"><div><div class="eyebrow">YOUR WALL. YOUR VIBE.</div><h1>Make your<br>space <span>pop.</span></h1><p>Posters for your favourite movies, cars, games and moods. Give your walls a little personality with Posteryy.</p><a class="cta" href="#shop">Explore the collection ↓</a></div><div class="art"><div class="poster"><small>POSTERYY / 01</small><strong>STAY<br>WILD<br>& FREE.</strong><small>ART FOR YOUR SPACE</small></div><div class="poster back"><small>POSTERYY / 02</small><strong>CHASE<br>THE<br>DREAM.</strong><small>LIVE IN COLOUR</small></div></div></div>
-<section class="wrap" id="shop"><div class="heading"><div class="eyebrow">THE COLLECTION</div><h2>Find your poster.</h2><p>A little something for every wall.</p></div>
-<div class="filters"><button class="active" data-filter="all">All</button><button data-filter="movies">Movies</button><button data-filter="cars">Cars</button><button data-filter="gaming">Gaming</button><button data-filter="aesthetic">Aesthetic</button></div>
+<div class="wrap hero">
+<div>
+<div class="eyebrow">YOUR WALL. YOUR VIBE.</div>
+<h1>Make your<br>space <span>pop.</span></h1>
+<p>Posters for your favourite movies, cars, games and moods. Give your walls a little personality with Posteryy.</p>
+<a class="cta" href="#shop">Explore the collection ↓</a>
+</div>
+<div class="art">
+<div class="poster">
+<small>POSTERYY / 01</small>
+<strong>STAY<br>WILD<br>& FREE.</strong>
+<small>ART FOR YOUR SPACE</small>
+</div>
+<div class="poster back">
+<small>POSTERYY / 02</small>
+<strong>CHASE<br>THE<br>DREAM.</strong>
+<small>LIVE IN COLOUR</small>
+</div>
+</div>
+</div>
+
+<section class="wrap" id="shop">
+<div class="heading">
+<div class="eyebrow">THE COLLECTION</div>
+<h2>Find your poster.</h2>
+<p>A little something for every wall.</p>
+</div>
+<div class="filters">
+<button class="active" data-filter="all">All</button>
+<button data-filter="movies">Movies</button>
+<button data-filter="cars">Cars</button>
+<button data-filter="gaming">Gaming</button>
+<button data-filter="aesthetic">Aesthetic</button>
+</div>
 <div class="grid">
-<article class="card" data-category="movies"><div class="cover one">CINEMA<br>IS MAGIC</div><div class="info"><h3>Movie Mood</h3><p>For the film lover.</p><div class="price">Price on enquiry</div><a href="#contact">Enquire to order</a></div></article>
-<article class="card" data-category="cars"><div class="cover two">BUILT<br>TO MOVE</div><div class="info"><h3>Street Machine</h3><p>For the car enthusiast.</p><div class="price">Price on enquiry</div><a href="#contact">Enquire to order</a></div></article>
-<article class="card" data-category="aesthetic"><div class="cover three">GOOD<br>THINGS<br>TAKE TIME</div><div class="info"><h3>Slow Days</h3><p>Minimal, calm and clean.</p><div class="price">Price on enquiry</div><a href="#contact">Enquire to order</a></div></article>
-<article class="card" data-category="gaming"><div class="cover four">LEVEL<br>UP.</div><div class="info"><h3>Player One</h3><p>For your gaming corner.</p><div class="price">Price on enquiry</div><a href="#contact">Enquire to order</a></div></article>
-<article class="card" data-category="aesthetic"><div class="cover five">CREATE<br>YOUR<br>OWN SUN</div><div class="info"><h3>Golden Hour</h3><p>Warm tones for your room.</p><div class="price">Price on enquiry</div><a href="#contact">Enquire to order</a></div></article>
-<article class="card" data-category="movies"><div class="cover six">BEYOND<br>THE<br>SCREEN</div><div class="info"><h3>Scene Stealer</h3><p>For stories you love.</p><div class="price">Price on enquiry</div><a href="#contact">Enquire to order</a></div></article>
-</div></section>
-<section class="wrap" id="about"><div class="about"><div><div class="eyebrow">A WALL WITH PERSONALITY</div><h2>Small prints.<br>Big energy.</h2></div><p>Posteryy is a poster corner for people who want their spaces to feel like them. Browse the collection and contact us to check available designs, sizes and prices.</p></div></section>
-<section class="wrap" id="contact"><div class="eyebrow">LET'S GET IT ON YOUR WALL</div><h2>Want a poster?</h2><p>Contact details will be added here. Ask the shop owner directly about designs, availability and pricing.</p></section>
+<article class="card" data-category="movies">
+<div class="cover one">CINEMA<br>IS MAGIC</div>
+<div class="info"><h3>Movie Mood</h3><p>For the film lover.</p><div class="price">Price on enquiry</div><a href="#contact">Enquire to order</a></div>
+</article>
+<article class="card" data-category="cars">
+<div class="cover two">BUILT<br>TO MOVE</div>
+<div class="info"><h3>Street Machine</h3><p>For the car enthusiast.</p><div class="price">Price on enquiry</div><a href="#contact">Enquire to order</a></div>
+</article>
+<article class="card" data-category="aesthetic">
+<div class="cover three">GOOD<br>THINGS<br>TAKE TIME</div>
+<div class="info"><h3>Slow Days</h3><p>Minimal, calm and clean.</p><div class="price">Price on enquiry</div><a href="#contact">Enquire to order</a></div>
+</article>
+<article class="card" data-category="gaming">
+<div class="cover four">LEVEL<br>UP.</div>
+<div class="info"><h3>Player One</h3><p>For your gaming corner.</p><div class="price">Price on enquiry</div><a href="#contact">Enquire to order</a></div>
+</article>
+<article class="card" data-category="aesthetic">
+<div class="cover five">CREATE<br>YOUR<br>OWN SUN</div>
+<div class="info"><h3>Golden Hour</h3><p>Warm tones for your room.</p><div class="price">Price on enquiry</div><a href="#contact">Enquire to order</a></div>
+</article>
+<article class="card" data-category="movies">
+<div class="cover six">BEYOND<br>THE<br>SCREEN</div>
+<div class="info"><h3>Scene Stealer</h3><p>For stories you love.</p><div class="price">Price on enquiry</div><a href="#contact">Enquire to order</a></div>
+</article>
+</div>
+</section>
+
+<section class="wrap" id="about">
+<div class="about">
+<div>
+<div class="eyebrow">A WALL WITH PERSONALITY</div>
+<h2>Small prints.<br>Big energy.</h2>
+</div>
+<p>Posteryy is a poster corner for people who want their spaces to feel like them. Browse the collection and contact us to check available designs, sizes and prices.</p>
+</div>
+</section>
+
+<section class="wrap" id="contact">
+<div class="eyebrow">LET'S GET IT ON YOUR WALL</div>
+<h2>Want a poster?</h2>
+<p>For designs, availability, sizes and pricing, get in touch with Posteryy.</p>
+<p><a class="cta" href="mailto:posteryy24@gmail.com">Email: posteryy24@gmail.com ↗</a></p>
+</section>
 </main>
-<footer><div class="wrap foot"><span class="logo">poster<span>yy.</span></span><span>Made for walls with personality · © Posteryy</span></div></footer>
+
+<footer>
+<div class="wrap foot">
+<span class="logo">poster<span>yy.</span></span>
+<span>Made for walls with personality · © Posteryy</span>
+</div>
+</footer>
+
 <script>
-document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.card').forEach(c=>c.hidden=b.dataset.filter!=='all'&&c.dataset.category!==b.dataset.filter)}));
+document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
+document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('active'));
+b.classList.add('active');
+document.querySelectorAll('.card').forEach(c=>{
+c.hidden=b.dataset.filter!=='all'&&c.dataset.category!==b.dataset.filter;
+});
+}));
 </script>
-</body></html>
+</body>
+</html>
