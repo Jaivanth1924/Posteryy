@@ -1,842 +1,128 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#111014">
-
 <title>Posteryy | Premium Posters for Your Space</title>
-<meta name="description" content="Shop stylish A4 posters at Posteryy. Movie, anime, gaming, car and aesthetic posters printed on high-quality glossy photo paper for just ₹50.">
-<meta name="keywords" content="Posteryy, posters, A4 posters, glossy photo posters, gaming posters, car posters, anime posters">
-
+<meta name="description" content="Shop stylish A4 posters at Posteryy. Movie, anime, gaming, car and aesthetic posters printed on high-quality glossy photo paper for ₹50.">
 <style>
-:root {
-  --bg:#101014;
-  --panel:#191920;
-  --panel2:#202029;
-  --text:#f8f8fa;
-  --muted:#aaaab5;
-  --lime:#baf477;
-  --line:#34343d;
-}
-* {box-sizing:border-box}
-html {scroll-behavior:smooth;scroll-padding-top:85px}
-body {
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;
-}
-a {color:inherit}
-button {font:inherit}
-.wrap {width:min(1160px,92%);margin:auto}
-
-/* HEADER */
-header {
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:rgba(16,16,20,.94);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
-}
-nav {
-  min-height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-}
-.logo {
-  font-size:29px;
-  font-weight:950;
-  letter-spacing:-1.8px;
-  text-decoration:none;
-}
-.logo span {color:var(--lime)}
-.links {
-  display:flex;
-  gap:27px;
-}
-.links a {
-  text-decoration:none;
-  font-size:14px;
-  color:var(--muted);
-}
-.links a:hover {color:var(--lime)}
-.nav-btn {
-  background:var(--lime);
-  color:#101014;
-  padding:11px 18px;
-  border-radius:25px;
-  text-decoration:none;
-  font-size:13px;
-  font-weight:850;
-}
-
-/* HERO */
-.hero {
-  padding:85px 0 75px;
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  align-items:center;
-  gap:45px;
-}
-.eyebrow {
-  color:var(--lime);
-  font-size:12px;
-  font-weight:850;
-  letter-spacing:2.5px;
-}
-.hero h1 {
-  font-size:clamp(49px,7vw,84px);
-  letter-spacing:-5px;
-  line-height:.98;
-  margin:19px 0;
-}
-.hero h1 span {color:var(--lime)}
-.hero p {
-  max-width:490px;
-  font-size:16px;
-  line-height:1.8;
-}
-.primary-btn {
-  display:inline-block;
-  background:var(--lime);
-  color:#111;
-  padding:15px 23px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:900;
-  font-size:14px;
-  margin-top:17px;
-  transition:.2s;
-}
-.primary-btn:hover {transform:translateY(-3px)}
-.hero-note {
-  margin-top:22px;
-  font-size:12px;
-  color:var(--muted);
-}
-.hero-art {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:13px;
-  transform:rotate(-3deg);
-}
-.hero-art img {
-  width:100%;
-  height:310px;
-  object-fit:contain;
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:13px;
-  box-shadow:0 18px 40px #0008;
-}
-.hero-art img:last-child {margin-top:45px}
-
-/* GENERAL SECTIONS */
-section {padding:65px 0}
-.section-heading {margin-bottom:25px}
-.section-heading h2 {
-  font-size:clamp(29px,4vw,40px);
-  letter-spacing:-1.5px;
-  margin:10px 0;
-}
-.section-heading p {
-  color:var(--muted);
-  line-height:1.7;
-}
-
-/* COLLECTION */
-.shop-section {
-  background:#141419;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-.filters {
-  display:flex;
-  gap:9px;
-  flex-wrap:wrap;
-  margin:28px 0;
-}
-.filters button {
-  padding:10px 17px;
-  border-radius:25px;
-  border:1px solid var(--line);
-  background:var(--panel);
-  color:var(--text);
-  cursor:pointer;
-  font-size:13px;
-  transition:.2s;
-}
-.filters button.active,
-.filters button:hover {
-  background:var(--lime);
-  color:#111;
-  border-color:var(--lime);
-}
-.grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:20px;
-}
-.card {
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:16px;
-  overflow:hidden;
-  transition:transform .25s,border-color .25s;
-}
-.card:hover {
-  transform:translateY(-5px);
-  border-color:var(--lime);
-}
-.cover {
-  height:310px;
-  background:#09090d;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:8px;
-}
-.cover img {
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  display:block;
-}
-.info {padding:18px}
-.category-label {
-  display:inline-block;
-  color:var(--lime);
-  font-size:10px;
-  font-weight:850;
-  letter-spacing:1.4px;
-  text-transform:uppercase;
-  margin-bottom:9px;
-}
-.info h3 {
-  font-size:18px;
-  margin:0 0 7px;
-}
-.info p {
-  font-size:12px;
-  color:var(--muted);
-  line-height:1.6;
-  margin:5px 0;
-}
-.specs {
-  padding-top:10px;
-  margin-top:12px;
-  border-top:1px solid var(--line);
-}
-.specs p {font-size:11px}
-.price-row {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:8px;
-  margin:17px 0 13px;
-}
-.price {
-  color:var(--lime);
-  font-size:22px;
-  font-weight:950;
-}
-.price small {
-  font-size:10px;
-  font-weight:500;
-  color:var(--muted);
-}
-.order-btn {
-  display:block;
-  width:100%;
-  padding:12px;
-  border-radius:25px;
-  text-align:center;
-  text-decoration:none;
-  font-size:13px;
-  font-weight:850;
-  background:var(--lime);
-  color:#111;
-  transition:.2s;
-}
-.order-btn:hover {background:#d0ff9c}
-.card[hidden] {display:none}
-
-/* WHY POSTERYY */
-.features {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-  margin-top:25px;
-}
-.feature {
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:15px;
-  padding:23px;
-}
-.feature .symbol {
-  font-size:25px;
-  color:var(--lime);
-}
-.feature h3 {font-size:16px}
-.feature p {
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.7;
-}
-
-/* ABOUT */
-.about-box {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-  align-items:center;
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:38px;
-}
-.about-box h2 {
-  font-size:39px;
-  letter-spacing:-2px;
-  line-height:1.1;
-}
-.about-box p {
-  color:var(--muted);
-  line-height:1.9;
-  font-size:14px;
-}
-
-/* CONTACT */
-.contact-box {
-  text-align:center;
-  padding:48px 25px;
-  background:linear-gradient(140deg,#222a20,#191920 60%);
-  border:1px solid #414b36;
-  border-radius:22px;
-}
-.contact-box h2 {
-  font-size:clamp(32px,5vw,46px);
-  letter-spacing:-2px;
-  margin:13px 0;
-}
-.contact-box p {
-  color:var(--muted);
-  line-height:1.7;
-}
-.contact-box .primary-btn {margin-top:12px}
-
-/* FOOTER */
-footer {
-  border-top:1px solid var(--line);
-  padding:30px 0;
-  margin-top:55px;
-}
-.foot {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
-.foot p {
-  font-size:12px;
-  color:var(--muted);
-}
-.foot-links {
-  display:flex;
-  gap:18px;
-}
-.foot-links a {
-  font-size:12px;
-  color:var(--muted);
-  text-decoration:none;
-}
-.foot-links a:hover {color:var(--lime)}
-
-/* MOBILE */
-@media(max-width:760px) {
-  .hero {
-    grid-template-columns:1fr;
-    padding:58px 0;
-    gap:28px;
-  }
-  .hero h1 {letter-spacing:-3px}
-  .hero-art img {height:240px}
-  .grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  .cover {height:230px}
-  .info {padding:13px}
-  .info h3 {font-size:15px}
-  .price {font-size:19px}
-  .about-box {grid-template-columns:1fr;padding:25px}
-  .features {grid-template-columns:1fr}
-  .links {display:none}
-}
-@media(max-width:430px) {
-  .cover {height:175px}
-  .info p {font-size:11px}
-  .info h3 {font-size:14px}
-  .specs p {font-size:10px}
-  .price {font-size:17px}
-  .order-btn {font-size:11px;padding:11px 5px}
-  .hero-art img {height:190px}
-  .hero h1 {font-size:52px}
-}
+:root{--bg:#101014;--panel:#191920;--text:#f8f8fa;--muted:#aaaab5;--lime:#baf477;--line:#34343d}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit}.wrap{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(16,16,20,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{font-size:29px;font-weight:950;letter-spacing:-1.8px;text-decoration:none}.logo span{color:var(--lime)}
+.links{display:flex;gap:27px}.links a{text-decoration:none;font-size:14px;color:var(--muted)}.links a:hover{color:var(--lime)}
+.nav-btn,.primary-btn{background:var(--lime);color:#101014;border-radius:28px;text-decoration:none;font-weight:900}
+.nav-btn{padding:11px 18px;font-size:13px}
+.hero{padding:85px 0 75px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:45px}
+.eyebrow{color:var(--lime);font-size:12px;font-weight:850;letter-spacing:2.5px}
+.hero h1{font-size:clamp(49px,7vw,84px);letter-spacing:-5px;line-height:.98;margin:19px 0}.hero h1 span{color:var(--lime)}
+.hero p{max-width:490px;font-size:16px;line-height:1.8}.primary-btn{display:inline-block;padding:15px 23px;font-size:14px;margin-top:17px}
+.hero-note{margin-top:22px;font-size:12px;color:var(--muted)}
+.hero-art{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:13px;transform:rotate(-3deg)}
+.hero-art img{width:100%;height:310px;object-fit:contain;background:var(--panel);border:1px solid var(--line);border-radius:13px;box-shadow:0 18px 40px #0008}
+.hero-art img:last-child{margin-top:45px}
+section{padding:65px 0}.section-heading{margin-bottom:25px}.section-heading h2{font-size:clamp(29px,4vw,40px);letter-spacing:-1.5px;margin:10px 0}
+.section-heading p{color:var(--muted);line-height:1.7}
+.shop-section{background:#141419;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin:28px 0}
+.filters button{padding:10px 17px;border-radius:25px;border:1px solid var(--line);background:var(--panel);color:var(--text);cursor:pointer;font-size:13px}
+.filters button.active,.filters button:hover{background:var(--lime);color:#111;border-color:var(--lime)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-5px);border-color:var(--lime)}
+.cover{height:310px;background:#09090d;display:flex;align-items:center;justify-content:center;padding:8px}
+.cover img{width:100%;height:100%;object-fit:contain;display:block}
+.info{padding:18px}.category-label{display:inline-block;color:var(--lime);font-size:10px;font-weight:850;letter-spacing:1.4px;margin-bottom:9px}
+.info h3{font-size:18px;margin:0 0 7px}.info p{font-size:12px;color:var(--muted);line-height:1.6;margin:5px 0}
+.specs{padding-top:10px;margin-top:12px;border-top:1px solid var(--line)}.specs p{font-size:11px}
+.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:17px 0 13px}
+.price{color:var(--lime);font-size:22px;font-weight:950}.price small{font-size:10px;font-weight:500;color:var(--muted)}
+.order-btn{display:block;width:100%;padding:12px;border-radius:25px;text-align:center;text-decoration:none;font-size:13px;font-weight:850;background:var(--lime);color:#111}
+.order-btn:hover{background:#d0ff9c}.card[hidden]{display:none}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:25px}
+.feature{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:23px}
+.symbol{font-size:25px;color:var(--lime)}.feature h3{font-size:16px}.feature p{color:var(--muted);font-size:13px;line-height:1.7}
+.about-box{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:38px}
+.about-box h2{font-size:39px;letter-spacing:-2px;line-height:1.1}.about-box p{color:var(--muted);line-height:1.9;font-size:14px}
+.contact-box{text-align:center;padding:48px 25px;background:linear-gradient(140deg,#222a20,#191920 60%);border:1px solid #414b36;border-radius:22px}
+.contact-box h2{font-size:clamp(32px,5vw,46px);letter-spacing:-2px;margin:13px 0}.contact-box p{color:var(--muted);line-height:1.7}
+footer{border-top:1px solid var(--line);padding:30px 0;margin-top:55px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.foot p,.foot-links a{font-size:12px;color:var(--muted)}.foot-links{display:flex;gap:18px}.foot-links a{text-decoration:none}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:58px 0;gap:28px}.hero h1{letter-spacing:-3px}.hero-art img{height:240px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.cover{height:230px}.info{padding:13px}.info h3{font-size:15px}.price{font-size:19px}.about-box{grid-template-columns:1fr;padding:25px}.features{grid-template-columns:1fr}.links{display:none}}
+@media(max-width:430px){.cover{height:175px}.info p{font-size:11px}.info h3{font-size:14px}.specs p{font-size:10px}.price{font-size:17px}.order-btn{font-size:11px;padding:11px 5px}.hero-art img{height:190px}.hero h1{font-size:52px}}
 </style>
 </head>
-
 <body>
-
-<header>
-<nav class="wrap">
+<header><nav class="wrap">
 <a class="logo" href="#">poster<span>yy.</span></a>
-
-<div class="links">
-<a href="#shop">Shop</a>
-<a href="#features">Why Posteryy</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</div>
-
+<div class="links"><a href="#shop">Shop</a><a href="#features">Why Posteryy</a><a href="#about">About</a><a href="#contact">Contact</a></div>
 <a class="nav-btn" href="#shop">Shop now ↗</a>
-</nav>
-</header>
-
+</nav></header>
 <main>
-
-<!-- HERO -->
 <div class="wrap hero">
-<div>
-<div class="eyebrow">YOUR WALL. YOUR VIBE.</div>
-
+<div><div class="eyebrow">YOUR WALL. YOUR VIBE.</div>
 <h1>Make your<br>space <span>pop.</span></h1>
-
-<p>
-Discover posters inspired by your favourite movies,
-cars, games, anime and aesthetics. Give your walls
-a personality with Posteryy.
-</p>
-
+<p>Discover posters inspired by your favourite movies, cars, games, anime and aesthetics. Give your walls a personality with Posteryy.</p>
 <a class="primary-btn" href="#shop">Explore collection ↘</a>
-
-<div class="hero-note">
-A4 SIZE · GLOSSY PHOTO PAPER · ₹50 EACH
-</div>
-</div>
-
+<div class="hero-note">A4 SIZE · GLOSSY PHOTO PAPER · ₹50 EACH</div></div>
 <div class="hero-art">
 <img src="images/adbedf035a26b9c20741c45194776c41.jpg" alt="GTA VI poster">
 <img src="images/a94b510dfa34781d50a1a5eae0cd6572.jpg" alt="Lamborghini poster">
-</div>
-</div>
+</div></div>
 
-<!-- SHOP -->
-<section class="shop-section" id="shop">
-<div class="wrap">
-
-<div class="section-heading">
-<div class="eyebrow">THE COLLECTION</div>
-<h2>Find your poster.</h2>
-<p>Choose your favourite design. Make your space yours.</p>
-</div>
-
+<section class="shop-section" id="shop"><div class="wrap">
+<div class="section-heading"><div class="eyebrow">THE COLLECTION</div><h2>Find your poster.</h2><p>Choose your favourite design. Make your space yours.</p></div>
 <div class="filters">
-<button class="active" data-filter="all">All posters</button>
-<button data-filter="movies">Movies</button>
-<button data-filter="cars">Cars</button>
-<button data-filter="gaming">Gaming</button>
-<button data-filter="anime">Anime</button>
-<button data-filter="aesthetic">Aesthetic</button>
+<button class="active" data-filter="all">All posters</button><button data-filter="movies">Movies</button><button data-filter="cars">Cars</button><button data-filter="gaming">Gaming</button><button data-filter="anime">Anime</button><button data-filter="aesthetic">Aesthetic</button>
 </div>
+<div class="grid" id="poster-grid">
+<!-- EXISTING POSTERS -->
+<article class="card" data-category="movies"><div class="cover"><img src="images/c124016f6b285992fff92cd2567c519b.jpg" alt="Peaky Blinders poster" loading="lazy"></div><div class="info"><span class="category-label">MOVIES</span><h3>Peaky Blinders</h3><p>A cinematic portrait for your wall.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20Peaky%20Blinders">Order through email ↗</a></div></article>
+<article class="card" data-category="cars"><div class="cover"><img src="images/a94b510dfa34781d50a1a5eae0cd6572.jpg" alt="Lamborghini poster" loading="lazy"></div><div class="info"><span class="category-label">CARS</span><h3>Lamborghini</h3><p>For automobile enthusiasts.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20Lamborghini">Order through email ↗</a></div></article>
+<article class="card" data-category="aesthetic"><div class="cover"><img src="images/6bf56d6995a1ffdf404e2c1a1215826d.jpg" alt="Do or Die samurai poster" loading="lazy"></div><div class="info"><span class="category-label">AESTHETIC</span><h3>Do or Die</h3><p>A bold samurai-inspired design.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20Do%20or%20Die">Order through email ↗</a></div></article>
+<article class="card" data-category="gaming"><div class="cover"><img src="images/adbedf035a26b9c20741c45194776c41.jpg" alt="GTA VI poster" loading="lazy"></div><div class="info"><span class="category-label">GAMING</span><h3>Grand Theft Auto VI</h3><p>Bring gaming energy to your space.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20GTA%20VI">Order through email ↗</a></div></article>
+<article class="card" data-category="gaming"><div class="cover"><img src="images/8fbb7924b06cdc5213409d59898ca681.jpg" alt="Gaming PC setup poster" loading="lazy"></div><div class="info"><span class="category-label">GAMING</span><h3>Gaming Setup</h3><p>For your ultimate gaming corner.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20Gaming%20Setup">Order through email ↗</a></div></article>
+<article class="card" data-category="anime"><div class="cover"><img src="images/ab9d6ca3406ae52991674dc07919294e.jpg" alt="Zenitsu anime poster" loading="lazy"></div><div class="info"><span class="category-label">ANIME</span><h3>Zenitsu</h3><p>Anime-inspired wall art.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20Zenitsu">Order through email ↗</a></div></article>
+<article class="card" data-category="anime"><div class="cover"><img src="images/anime-01-luffy-wanted.jpg" alt="Luffy Wanted" loading="lazy"></div><div class="info"><span class="category-label">ANIME</span><h3>Luffy Wanted</h3><p>One Piece poster.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Luffy%20Wanted%20Poster">Order through email ↗</a></div></article>
+<article class="card" data-category="anime"><div class="cover"><img src="images/anime-02-gojo-dark.jpg" alt="Gojo Dark Edition" loading="lazy"></div><div class="info"><span class="category-label">ANIME</span><h3>Gojo Dark Edition</h3><p>Jujutsu Kaisen poster.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Gojo%20Dark%20Poster">Order through email ↗</a></div></article>
+<article class="card" data-category="anime"><div class="cover"><img src="images/anime-03-gojo-blue.jpg" alt="Gojo Blue Edition" loading="lazy"></div><div class="info"><span class="category-label">ANIME</span><h3>Gojo Blue Edition</h3><p>Jujutsu Kaisen poster.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Gojo%20Blue%20Poster">Order through email ↗</a></div></article>
+<article class="card" data-category="anime"><div class="cover"><img src="images/anime-04-gojo-red.jpg" alt="Gojo Red Edition" loading="lazy"></div><div class="info"><span class="category-label">ANIME</span><h3>Gojo Red Edition</h3><p>Jujutsu Kaisen poster.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Gojo%20Red%20Poster">Order through email ↗</a></div></article>
+<article class="card" data-category="anime"><div class="cover"><img src="images/anime-05-gojo-collage.jpg" alt="Gojo Collage" loading="lazy"></div><div class="info"><span class="category-label">ANIME</span><h3>Gojo Collage</h3><p>Jujutsu Kaisen poster.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Gojo%20Collage%20Poster">Order through email ↗</a></div></article>
+<article class="card" data-category="anime"><div class="cover"><img src="images/anime-06-itachi.jpg" alt="Itachi Uchiha" loading="lazy"></div><div class="info"><span class="category-label">ANIME</span><h3>Itachi Uchiha</h3><p>Naruto poster.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Itachi%20Poster">Order through email ↗</a></div></article>
+<article class="card" data-category="anime"><div class="cover"><img src="images/anime-07-luffy-gear-5.jpg" alt="Luffy Gear 5" loading="lazy"></div><div class="info"><span class="category-label">ANIME</span><h3>Luffy Gear 5</h3><p>One Piece poster.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Luffy%20Gear%205%20Poster">Order through email ↗</a></div></article>
+<article class="card" data-category="anime"><div class="cover"><img src="images/anime-08-tanjiro.jpg" alt="Tanjiro Kamado" loading="lazy"></div><div class="info"><span class="category-label">ANIME</span><h3>Tanjiro Kamado</h3><p>Demon Slayer poster.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Tanjiro%20Poster">Order through email ↗</a></div></article>
 
-<div class="grid">
+<!-- NEW CAR POSTERS: filenames are the eight newly uploaded image files -->
+<article class="card" data-category="cars"><div class="cover"><img src="images/313543d167d509715ad2b29ca984d45.jpg" alt="Toyota Supra poster" loading="lazy"></div><div class="info"><span class="category-label">CARS</span><h3>Toyota Supra</h3><p>Japanese performance icon.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20Toyota%20Supra">Order through email ↗</a></div></article>
+<article class="card" data-category="cars"><div class="cover"><img src="images/388be4800adfadd736231df8b281226f.jpg" alt="BMW E30 M3 poster" loading="lazy"></div><div class="info"><span class="category-label">CARS</span><h3>BMW E30 M3</h3><p>A timeless classic BMW design.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20BMW%20E30%20M3">Order through email ↗</a></div></article>
+<article class="card" data-category="cars"><div class="cover"><img src="images/612ea780f2fa82da3b916b50b74fe717.jpg" alt="Shelby GT500 poster" loading="lazy"></div><div class="info"><span class="category-label">CARS</span><h3>Shelby GT500</h3><p>American muscle, track-inspired style.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20Shelby%20GT500">Order through email ↗</a></div></article>
+<article class="card" data-category="cars"><div class="cover"><img src="images/72b0f6461943e816bda335fd7746be92.jpg" alt="Red Porsche poster" loading="lazy"></div><div class="info"><span class="category-label">CARS</span><h3>Porsche Red Edition</h3><p>A bold red sports-car design.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20Porsche%20Red">Order through email ↗</a></div></article>
+<article class="card" data-category="cars"><div class="cover"><img src="images/ccc71839953c8b52955a1fd49d887cb6.jpg" alt="Dodge Challenger poster" loading="lazy"></div><div class="info"><span class="category-label">CARS</span><h3>Dodge Challenger</h3><p>Bold American muscle-car artwork.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20Dodge%20Challenger">Order through email ↗</a></div></article>
+<article class="card" data-category="cars"><div class="cover"><img src="images/d977bf6c2d87e6ee5dea3ed7e720d1bd.jpg" alt="BMW M Performance blue poster" loading="lazy"></div><div class="info"><span class="category-label">CARS</span><h3>BMW M Performance — Blue</h3><p>Precision and performance in blue.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20BMW%20M%20Blue">Order through email ↗</a></div></article>
+<article class="card" data-category="cars"><div class="cover"><img src="images/de61bf4eabfb9b7f22a8247ac73b4a21.jpg" alt="BMW M Performance grey poster" loading="lazy"></div><div class="info"><span class="category-label">CARS</span><h3>BMW M Performance — Grey</h3><p>A dark, motorsport-inspired BMW design.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20BMW%20M%20Grey">Order through email ↗</a></div></article>
+<article class="card" data-category="cars"><div class="cover"><img src="images/e3b01c86e269a8efa75f5616d0c0ded2.jpg" alt="Porsche 911 poster" loading="lazy"></div><div class="info"><span class="category-label">CARS</span><h3>Porsche 911</h3><p>An iconic Porsche 911 poster.</p><div class="specs"><p>Size: A4</p><p>Paper: High-quality glossy photo paper</p></div><div class="price-row"><div class="price">₹50 <small>/ poster</small></div></div><a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20Porsche%20911">Order through email ↗</a></div></article>
+</div></div></section>
 
-<!-- MOVIES -->
-<article class="card" data-category="movies">
-<div class="cover">
-<img src="images/c124016f6b285992fff92cd2567c519b.jpg"
-alt="Peaky Blinders inspired poster" loading="lazy">
-</div>
-<div class="info">
-<span class="category-label">MOVIES</span>
-<h3>Peaky Blinders</h3>
-<p>A cinematic portrait for your wall.</p>
-<div class="specs">
-<p>Size: A4</p>
-<p>Paper: High-quality glossy photo paper</p>
-</div>
-<div class="price-row">
-<div class="price">₹50 <small>/ poster</small></div>
-</div>
-<a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20Peaky%20Blinders&body=Hello%20Posteryy%2C%0A%0AI%20would%20like%20to%20order%20the%20Peaky%20Blinders%20poster.%0ASize%3A%20A4%0APrice%3A%20Rs%2050%0A%0AThank%20you.">Order through email ↗</a>
-</div>
-</article>
-
-<!-- CARS -->
-<article class="card" data-category="cars">
-<div class="cover">
-<img src="images/a94b510dfa34781d50a1a5eae0cd6572.jpg"
-alt="Lamborghini poster" loading="lazy">
-</div>
-<div class="info">
-<span class="category-label">CARS</span>
-<h3>Lamborghini</h3>
-<p>For automobile enthusiasts.</p>
-<div class="specs">
-<p>Size: A4</p>
-<p>Paper: High-quality glossy photo paper</p>
-</div>
-<div class="price-row">
-<div class="price">₹50 <small>/ poster</small></div>
-</div>
-<a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20Lamborghini&body=Hello%20Posteryy%2C%0A%0AI%20would%20like%20to%20order%20the%20Lamborghini%20poster.%0ASize%3A%20A4%0APrice%3A%20Rs%2050%0A%0AThank%20you.">Order through email ↗</a>
-</div>
-</article>
-
-<!-- AESTHETIC -->
-<article class="card" data-category="aesthetic">
-<div class="cover">
-<img src="images/6bf56d6995a1ffdf404e2c1a1215826d.jpg"
-alt="Do or Die samurai poster" loading="lazy">
-</div>
-<div class="info">
-<span class="category-label">AESTHETIC</span>
-<h3>Do or Die</h3>
-<p>A bold samurai-inspired design.</p>
-<div class="specs">
-<p>Size: A4</p>
-<p>Paper: High-quality glossy photo paper</p>
-</div>
-<div class="price-row">
-<div class="price">₹50 <small>/ poster</small></div>
-</div>
-<a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20Do%20or%20Die&body=Hello%20Posteryy%2C%0A%0AI%20would%20like%20to%20order%20the%20Do%20or%20Die%20poster.%0ASize%3A%20A4%0APrice%3A%20Rs%2050%0A%0AThank%20you.">Order through email ↗</a>
-</div>
-</article>
-
-<!-- GTA VI -->
-<article class="card" data-category="gaming">
-<div class="cover">
-<img src="images/adbedf035a26b9c20741c45194776c41.jpg"
-alt="Grand Theft Auto VI poster" loading="lazy">
-</div>
-<div class="info">
-<span class="category-label">GAMING</span>
-<h3>Grand Theft Auto VI</h3>
-<p>Bring gaming energy to your space.</p>
-<div class="specs">
-<p>Size: A4</p>
-<p>Paper: High-quality glossy photo paper</p>
-</div>
-<div class="price-row">
-<div class="price">₹50 <small>/ poster</small></div>
-</div>
-<a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20GTA%20VI&body=Hello%20Posteryy%2C%0A%0AI%20would%20like%20to%20order%20the%20GTA%20VI%20poster.%0ASize%3A%20A4%0APrice%3A%20Rs%2050%0A%0AThank%20you.">Order through email ↗</a>
-</div>
-</article>
-
-<!-- GAMING SETUP -->
-<article class="card" data-category="gaming">
-<div class="cover">
-<img src="images/8fbb7924b06cdc5213409d59898ca681.jpg"
-alt="RGB gaming PC setup poster" loading="lazy">
-</div>
-<div class="info">
-<span class="category-label">GAMING</span>
-<h3>Gaming Setup</h3>
-<p>For your ultimate gaming corner.</p>
-<div class="specs">
-<p>Size: A4</p>
-<p>Paper: High-quality glossy photo paper</p>
-</div>
-<div class="price-row">
-<div class="price">₹50 <small>/ poster</small></div>
-</div>
-<a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20Gaming%20Setup&body=Hello%20Posteryy%2C%0A%0AI%20would%20like%20to%20order%20the%20Gaming%20Setup%20poster.%0ASize%3A%20A4%0APrice%3A%20Rs%2050%0A%0AThank%20you.">Order through email ↗</a>
-</div>
-</article>
-
-<!-- ANIME -->
-<article class="card" data-category="anime">
-<div class="cover">
-<img src="images/ab9d6ca3406ae52991674dc07919294e.jpg"
-alt="Zenitsu anime poster" loading="lazy">
-</div>
-<div class="info">
-<span class="category-label">ANIME</span>
-<h3>Zenitsu</h3>
-<p>Anime-inspired wall art.</p>
-<div class="specs">
-<p>Size: A4</p>
-<p>Paper: High-quality glossy photo paper</p>
-</div>
-<div class="price-row">
-<div class="price">₹50 <small>/ poster</small></div>
-</div>
-<a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Order%20-%20Zenitsu&body=Hello%20Posteryy%2C%0A%0AI%20would%20like%20to%20order%20the%20Zenitsu%20poster.%0ASize%3A%20A4%0APrice%3A%20Rs%2050%0A%0AThank%20you.">Order through email ↗</a>
-</div>
-</article>
-
-<!-- ANIME POSTER 2 -->
-<article class="card" data-category="anime">
-<div class="cover">
-<img src="images/anime-01-luffy-wanted.jpg" alt="Luffy Wanted" loading="lazy">
-</div>
-<div class="info">
-<span class="category-label">ANIME</span>
-<h3>Luffy Wanted</h3>
-<p>One Piece poster.</p>
-<div class="specs">
-<p>Size: A4</p>
-<p>Paper: High-quality glossy photo paper</p>
-</div>
-<div class="price-row">
-<div class="price">₹50 <small>/ poster</small></div>
-</div>
-<a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Luffy%20Wanted%20Poster">Order through email ↗</a>
-</div>
-</article>
-
-<!-- ANIME POSTER 3 -->
-<article class="card" data-category="anime">
-<div class="cover">
-<img src="images/anime-02-gojo-dark.jpg" alt="Gojo Dark" loading="lazy">
-</div>
-<div class="info">
-<span class="category-label">ANIME</span>
-<h3>Gojo Dark Edition</h3>
-<p>Jujutsu Kaisen poster.</p>
-<div class="specs">
-<p>Size: A4</p>
-<p>Paper: High-quality glossy photo paper</p>
-</div>
-<div class="price-row">
-<div class="price">₹50 <small>/ poster</small></div>
-</div>
-<a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Gojo%20Dark%20Poster">Order through email ↗</a>
-</div>
-</article>
-
-<!-- ANIME POSTER 4 -->
-<article class="card" data-category="anime">
-<div class="cover">
-<img src="images/anime-03-gojo-blue.jpg" alt="Gojo Blue" loading="lazy">
-</div>
-<div class="info">
-<span class="category-label">ANIME</span>
-<h3>Gojo Blue Edition</h3>
-<p>Jujutsu Kaisen poster.</p>
-<div class="specs">
-<p>Size: A4</p>
-<p>Paper: High-quality glossy photo paper</p>
-</div>
-<div class="price-row">
-<div class="price">₹50 <small>/ poster</small></div>
-</div>
-<a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Gojo%20Blue%20Poster">Order through email ↗</a>
-</div>
-</article>
-
-<!-- ANIME POSTER 5 -->
-<article class="card" data-category="anime">
-<div class="cover">
-<img src="images/anime-04-gojo-red.jpg" alt="Gojo Red" loading="lazy">
-</div>
-<div class="info">
-<span class="category-label">ANIME</span>
-<h3>Gojo Red Edition</h3>
-<p>Jujutsu Kaisen poster.</p>
-<div class="specs">
-<p>Size: A4</p>
-<p>Paper: High-quality glossy photo paper</p>
-</div>
-<div class="price-row">
-<div class="price">₹50 <small>/ poster</small></div>
-</div>
-<a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Gojo%20Red%20Poster">Order through email ↗</a>
-</div>
-</article>
-
-<!-- ANIME POSTER 6 -->
-<article class="card" data-category="anime">
-<div class="cover">
-<img src="images/anime-05-gojo-collage.jpg" alt="Gojo Collage" loading="lazy">
-</div>
-<div class="info">
-<span class="category-label">ANIME</span>
-<h3>Gojo Collage</h3>
-<p>Jujutsu Kaisen poster.</p>
-<div class="specs">
-<p>Size: A4</p>
-<p>Paper: High-quality glossy photo paper</p>
-</div>
-<div class="price-row">
-<div class="price">₹50 <small>/ poster</small></div>
-</div>
-<a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Gojo%20Collage%20Poster">Order through email ↗</a>
-</div>
-</article>
-
-<!-- ANIME POSTER 7 -->
-<article class="card" data-category="anime">
-<div class="cover">
-<img src="images/anime-06-itachi.jpg" alt="Itachi Uchiha" loading="lazy">
-</div>
-<div class="info">
-<span class="category-label">ANIME</span>
-<h3>Itachi Uchiha</h3>
-<p>Naruto poster.</p>
-<div class="specs">
-<p>Size: A4</p>
-<p>Paper: High-quality glossy photo paper</p>
-</div>
-<div class="price-row">
-<div class="price">₹50 <small>/ poster</small></div>
-</div>
-<a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Itachi%20Poster">Order through email ↗</a>
-</div>
-</article>
-
-<!-- ANIME POSTER 8 -->
-<article class="card" data-category="anime">
-<div class="cover">
-<img src="images/anime-07-luffy-gear-5.jpg" alt="Luffy Gear 5" loading="lazy">
-</div>
-<div class="info">
-<span class="category-label">ANIME</span>
-<h3>Luffy Gear 5</h3>
-<p>One Piece poster.</p>
-<div class="specs">
-<p>Size: A4</p>
-<p>Paper: High-quality glossy photo paper</p>
-</div>
-<div class="price-row">
-<div class="price">₹50 <small>/ poster</small></div>
-</div>
-<a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Luffy%20Gear%205%20Poster">Order through email ↗</a>
-</div>
-</article>
-
-<!-- ANIME POSTER 9 -->
-<article class="card" data-category="anime">
-<div class="cover">
-<img src="images/anime-08-tanjiro.jpg" alt="Tanjiro Kamado" loading="lazy">
-</div>
-<div class="info">
-<span class="category-label">ANIME</span>
-<h3>Tanjiro Kamado</h3>
-<p>Demon Slayer poster.</p>
-<div class="specs">
-<p>Size: A4</p>
-<p>Paper: High-quality glossy photo paper</p>
-</div>
-<div class="price-row">
-<div class="price">₹50 <small>/ poster</small></div>
-</div>
-<a class="order-btn" href="mailto:posteryy24@gmail.com?subject=Tanjiro%20Poster">Order through email ↗</a>
-</div>
-</article>
-
-</div>
-</div>
-</section>
-
-<!-- WHY POSTERYY -->
-<section class="wrap" id="features">
-<div class="section-heading">
-<div class="eyebrow">THE POSTERYY DIFFERENCE</div>
-<h2>Made for your space.</h2>
-<p>Simple, stylish posters for the things you love.</p>
-</div>
-
-<div class="features">
-<div class="feature">
-<div class="symbol">✦</div>
-<h3>A4 Poster Size</h3>
-<p>A4-sized prints designed to bring personality to your walls.</p>
-</div>
-<div class="feature">
-<div class="symbol">◈</div>
-<h3>Glossy Finish</h3>
-<p>Printed on high-quality glossy photo paper.</p>
-</div>
-<div class="feature">
-<div class="symbol">₹</div>
-<h3>Just ₹50</h3>
-<p>Every listed poster is priced at ₹50 each.</p>
-</div>
-</div>
-</section>
-
-<!-- ABOUT -->
-<section class="wrap" id="about">
-<div class="about-box">
-<div>
-<div class="eyebrow">A WALL WITH PERSONALITY</div>
-<h2>Small prints.<br>Big energy.</h2>
-</div>
-<p>
-Welcome to Posteryy — a poster corner for people who
-want their spaces to feel like them. From cars and
-gaming to movies, anime and aesthetics, find a design
-that matches your vibe. Every listed poster is A4 size,
-printed on high-quality glossy photo paper and priced
-at ₹50.
-</p>
-</div>
-</section>
-
-<!-- CONTACT -->
-<section class="wrap" id="contact">
-<div class="contact-box">
-<div class="eyebrow">YOUR WALL IS WAITING</div>
-<h2>Found your favourite?</h2>
-<p>Choose a poster and send us an email to place your order.</p>
-<a class="primary-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Poster%20Order">Order through email ↗</a>
-<p style="font-size:13px;margin-top:20px">
-posteryy24@gmail.com
-</p>
-</div>
-</section>
-
+<section class="wrap" id="features"><div class="section-heading"><div class="eyebrow">THE POSTERYY DIFFERENCE</div><h2>Made for your space.</h2><p>Simple, stylish posters for the things you love.</p></div>
+<div class="features"><div class="feature"><div class="symbol">✦</div><h3>A4 Poster Size</h3><p>A4-sized prints designed to bring personality to your walls.</p></div><div class="feature"><div class="symbol">◈</div><h3>Glossy Finish</h3><p>Printed on high-quality glossy photo paper.</p></div><div class="feature"><div class="symbol">₹</div><h3>Just ₹50</h3><p>Every listed poster is priced at ₹50 each.</p></div></div></section>
+<section class="wrap" id="about"><div class="about-box"><div><div class="eyebrow">A WALL WITH PERSONALITY</div><h2>Small prints.<br>Big energy.</h2></div><p>Welcome to Posteryy — a poster corner for people who want their spaces to feel like them. From cars and gaming to movies, anime and aesthetics, find a design that matches your vibe. Every listed poster is A4 size, printed on high-quality glossy photo paper and priced at ₹50.</p></div></section>
+<section class="wrap" id="contact"><div class="contact-box"><div class="eyebrow">YOUR WALL IS WAITING</div><h2>Found your favourite?</h2><p>Choose a poster and send us an email to place your order.</p><a class="primary-btn" href="mailto:posteryy24@gmail.com?subject=Posteryy%20Poster%20Order">Order through email ↗</a><p style="font-size:13px;margin-top:20px">posteryy24@gmail.com</p></div></section>
 </main>
-
-<footer>
-<div class="wrap foot">
-<a class="logo" href="#">poster<span>yy.</span></a>
-<div class="foot-links">
-<a href="#shop">Shop</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</div>
-<p>Made for walls with personality · © Posteryy</p>
-</div>
-</footer>
-
+<footer><div class="wrap foot"><a class="logo" href="#">poster<span>yy.</span></a><div class="foot-links"><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a></div><p>Made for walls with personality · © Posteryy</p></div></footer>
 <script>
-const filterButtons = document.querySelectorAll('.filters button');
-const cards = document.querySelectorAll('.card');
-
-filterButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    filterButtons.forEach(item => item.classList.remove('active'));
-    button.classList.add('active');
-
-    const selected = button.dataset.filter;
-
-    cards.forEach(card => {
-      card.hidden = selected !== 'all' &&
-                    card.dataset.category !== selected;
-    });
-  });
-});
+const filterButtons=document.querySelectorAll('.filters button');
+const cards=document.querySelectorAll('.card');
+filterButtons.forEach(button=>button.addEventListener('click',()=>{
+ filterButtons.forEach(item=>item.classList.remove('active'));
+ button.classList.add('active');
+ const selected=button.dataset.filter;
+ cards.forEach(card=>card.hidden=selected!=='all'&&card.dataset.category!==selected);
+}));
 </script>
-
 </body>
 </html>
